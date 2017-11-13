@@ -43,6 +43,12 @@ module.exports = {
     ]),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../../../../public/index.html")
-    })
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ]
 }

@@ -19,3 +19,5 @@ webpackConfigFile in fastOptJS := Some(baseDirectory.value / "webpack-fastopt.co
 webpackConfigFile in fullOptJS := Some(baseDirectory.value / "webpack-opt.config.js")
 
 webpackDevServerExtraArgs in fastOptJS := Seq("--inline", "--hot")
+
+webpackBundlingMode in fastOptJS := BundlingMode.LibraryOnly()

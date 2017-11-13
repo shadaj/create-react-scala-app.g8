@@ -4,12 +4,16 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
-    "$name$-fastopt": [ path.resolve(__dirname, "./hot-launcher.js") ]
+    "$name$-fastopt": ["./$name$-fastopt-entrypoint.js"],
+    "launcher": ["./hot-launcher.js"]
   },
   output: {
     path: __dirname,
-    filename: "[name]-bundle.js"
+    filename: "[name]-library.js",
+    library: "appLibrary",
+    libraryTarget: "var"
   },
+  devtool: "source-map",
   resolve: {
     alias: {
       "resources": path.resolve(__dirname, "../../../../src/main/resources")
@@ -33,14 +37,18 @@ module.exports = {
           }
         ]
       }
-    ]
+    ],
+    noParse: (content) => {
+      return content.endsWith("-fastopt.js");
+    }
   },
   plugins: [
     new CopyWebpackPlugin([
       { from: path.resolve(__dirname, "../../../../public") }
     ]),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../../../../public/index.html")
+      template: path.resolve(__dirname, "../../../../public/index-fastopt.html"),
+      inject: false
     })
   ]
 }
