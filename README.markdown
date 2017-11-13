@@ -1,8 +1,6 @@
 # Create React Scala App
 Create [React](https://facebook.github.io/react/) apps in [Scala](https://scala-lang.org/) (via [Slinky](https://github.com/shadaj/slinky)) with no build configuration
 
-Based on https://github.com/facebookincubator/create-react-app
-
 ## Quick Overview
 Make sure you have SBT and NPM installed.
 
@@ -77,3 +75,25 @@ Builds the app for production to the `build` folder. It correctly bundles React 
 **Note:** there is currently a bug that causes execution of this command to always end in an exception. It is safe to ignore this exception, since the build folder will still be correctly generated.
 
 Your app is ready to be deployed.
+
+## Philosophy
++ Compatibility: You can use tools from both the Scala and JavaScript ecosystems and integrate them into your build setup. Your project starts with an SBT configuration for handling compilation and dependencies, but also has a customizable Webpack setup for adding plugins and loaders.
++ No Configuration Required: You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
++ No Lock-In: Your generated project is free of any dependencies specific to create-react-scala-app. You can start customizing the build configuration anytime without even needing an "eject" command!
+
+## What’s Inside?
+The generated project uses the following tools and libraries:
++ [SBT](http://www.scala-sbt.org/) to compile Scala sources and [NPM](https://www.npmjs.com/) to resolve JavaScript package dependencies
++ Scala.js DOM wrappers: [Scala.js DOM](https://github.com/scala-js/scala-js-dom)
++ React wrapper, HTML DSL, and hot reloading: [Slinky](https://github.com/shadaj/slinky)
++ [Scala.js Bundler](https://github.com/scalacenter/scalajs-bundler) to bundle your Scala.js app with Webpack
++ [Webpack](https://webpack.js.org/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [file-loader](https://github.com/webpack-contrib/file-loader), [style-loader](https://github.com/webpack-contrib/style-loader), [css-loader](https://github.com/webpack-contrib/css-loader), [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin), and [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin)
+
+## Why Use This?
+With create-react-scala-app you can quickly bootstrap a new application using Scala and React. Your environment will have everything you need to build a new Scala app:
++ A familiar API for writing React code in Scala, with support for hot reloading components.
++ A dev server that automatically compiles your Scala code to JavaScript.
++ A build script to bundle JavaScript, CSS, and images for production, with sourcemaps.
+
+## Acknowledgements
+`create-react-scala-app` is based on Facebook's [Create React App](https://github.com/facebookincubator/create-react-app) and JetBrains' [Create React Kotlin App](https://github.com/JetBrains/create-react-kotlin-app).
