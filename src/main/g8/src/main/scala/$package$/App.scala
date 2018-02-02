@@ -1,8 +1,8 @@
 package $package$
 
-import me.shadaj.slinky.core._
-import me.shadaj.slinky.core.annotations.react
-import me.shadaj.slinky.web.html._
+import slinky.core._
+import slinky.core.annotations.react
+import slinky.web.html._
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSImport, ScalaJSDefined}
@@ -15,7 +15,7 @@ object AppCSS extends js.Object
 @js.native
 object ReactLogo extends js.Object
 
-@react class App extends Component {
+@react class App extends StatelessComponent {
   type Props = Unit
   
   private val css = AppCSS

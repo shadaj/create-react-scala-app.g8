@@ -4,9 +4,9 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSExportTopLevel, JSImport}
 import scala.scalajs.LinkingInfo
 
-import me.shadaj.slinky.core._
-import me.shadaj.slinky.web.ReactDOM
-import me.shadaj.slinky.hot
+import slinky.core._
+import slinky.web.ReactDOM
+import slinky.hot
 
 import org.scalajs.dom
 
