@@ -7,7 +7,7 @@ import slinky.web.html._
 import scala.scalajs.js
 import scala.scalajs.js.annotation.{JSImport, ScalaJSDefined}
 
-@JSImport("resources/app.css", JSImport.Default)
+@JSImport("resources/App.css", JSImport.Default)
 @js.native
 object AppCSS extends js.Object
 
