@@ -27,7 +27,7 @@ To use create-react-scala-app, you'll need SBT, which is the primary build tool,
 
 **You’ll need to have Node >= 6 on your machine.** You can use [nvm](https://github.com/creationix/nvm#installation) to easily switch Node versions between different projects.
 
-**This tool doesn’t assume a Node backend.** The Node installation is only required for Create React App itself.
+**This tool doesn’t assume a Node backend.** The Node installation is only required for Create React Scala App itself.
 
 ### Creating an App
 To create a new app, run: `sbt new shadaj/create-react-scala-app.g8`, follow the instructions that follow, then `cd my-app`.
