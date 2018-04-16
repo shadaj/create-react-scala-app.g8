@@ -3,9 +3,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  mode: "development",
   entry: {
-    "$name$-fastopt": ["./$name$-fastopt-entrypoint.js"],
-    "launcher": ["./hot-launcher.js"]
+    "dependencies": ["./$name$-fastopt-entrypoint.js"],
+    "$name$-fastopt": ["./hot-launcher.js"]
   },
   output: {
     path: __dirname,

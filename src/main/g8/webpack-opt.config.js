@@ -5,10 +5,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  "entry": {
+  mode: "production",
+  entry: {
     "$name$-opt": [ path.resolve(__dirname, "./opt-launcher.js") ]
   },
-  "output": {
+  output: {
     "path": path.resolve(__dirname, "../../../../build"),
     "filename": "[name]-bundle.js"
   },
@@ -48,7 +49,6 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('production')
       }
-    }),
-    new webpack.optimize.UglifyJsPlugin()
+    })
   ]
 }
