@@ -16,8 +16,8 @@ Then open http://localhost:8080 to see your app.
 When you're ready to deploy to production, create a minified bundle with `sbt fullOptJS::webpack`
 
 ### Get Started Immediately
-You **don’t** need to install or configure tools like Webpack or Babel.
-They are preconfigured and hidden so that you can focus on the code.
+You **don’t** need to install or configure tools like Webpack.
+They are preconfigured so that you can focus on the code.
 
 Just create a project, and you’re good to go.
 
@@ -68,6 +68,9 @@ Runs the app in development mode with hot-reloading enabled.
 Open http://localhost:8080 to see your app
 
 The page will automatically reload if you make changes to the code. You will see compilation and Webpack errors in your console.
+
+### `sbt test`
+Runs unit tests for your app inside a Node environment with simulated DOM APIs.
 
 ### `sbt fullOptJS::webpack`
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. It also minifies the build using UglifyJS.

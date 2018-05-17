@@ -1,10 +1,10 @@
+var merge = require('webpack-merge');
+var core = require('./webpack-core.config.js')
 var webpack = require("webpack");
 var path = require("path");
-
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
 
-module.exports = {
+module.exports = merge(core, {
   mode: "production",
   entry: {
     "$name$-opt": [ path.resolve(__dirname, "./opt-launcher.js") ]
@@ -18,30 +18,7 @@ module.exports = {
       "resources": path.resolve(__dirname, "../../../../src/main/resources")
     }
   },
-  module: {
-    rules: [
-      {
-        test: /\\.css\$/,
-        use: [ 'style-loader', 'css-loader' ]
-      },
-      // "file" loader for svg
-      {
-        test: /\\.svg\$/,
-        use: [
-          {
-            loader: 'file-loader',
-            query: {
-              name: 'static/media/[name].[hash:8].[ext]'
-            }
-          }
-        ]
-      }
-    ]
-  },
   plugins: [
-    new CopyWebpackPlugin([
-      { from: path.resolve(__dirname, "../../../../public") }
-    ]),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../../../../public/index.html")
     }),
@@ -51,4 +28,4 @@ module.exports = {
       }
     })
   ]
-}
+})
