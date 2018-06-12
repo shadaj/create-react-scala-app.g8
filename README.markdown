@@ -75,8 +75,6 @@ Runs unit tests for your app inside a Node environment with simulated DOM APIs.
 ### `sbt fullOptJS::webpack`
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. It also minifies the build using UglifyJS.
 
-**Note:** there is currently a bug that causes execution of this command to always end in an exception. It is safe to ignore this exception, since the build folder will still be correctly generated.
-
 Your app is ready to be deployed.
 
 ## Philosophy
