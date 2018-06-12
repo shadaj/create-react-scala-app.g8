@@ -2,10 +2,10 @@ enablePlugins(ScalaJSBundlerPlugin)
 
 name := "$name$"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.12.6"
 
-npmDependencies in Compile += "react" -> "16.3.2"
-npmDependencies in Compile += "react-dom" -> "16.3.2"
+npmDependencies in Compile += "react" -> "16.4.0"
+npmDependencies in Compile += "react-dom" -> "16.4.0"
 npmDependencies in Compile += "react-proxy" -> "1.1.8"
 
 npmDevDependencies in Compile += "file-loader" -> "1.1.11"
@@ -15,8 +15,8 @@ npmDevDependencies in Compile += "html-webpack-plugin" -> "3.2.0"
 npmDevDependencies in Compile += "copy-webpack-plugin" -> "4.5.1"
 npmDevDependencies in Compile += "webpack-merge" -> "4.1.2"
 
-libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.4.1"
-libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.4.1"
+libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.4.3"
+libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.4.3"
 
 libraryDependencies += "org.scalatest" %%% "scalatest" % "3.0.5" % Test
 
