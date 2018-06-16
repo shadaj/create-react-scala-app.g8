@@ -13,11 +13,6 @@ module.exports = merge(core, {
     "path": path.resolve(__dirname, "../../../../build"),
     "filename": "[name]-bundle.js"
   },
-  resolve: {
-    alias: {
-      "resources": path.resolve(__dirname, "../../../../src/main/resources")
-    }
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../../../../public/index.html")
