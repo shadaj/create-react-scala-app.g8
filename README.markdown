@@ -9,7 +9,7 @@ sbt new shadaj/create-react-scala-app.g8
 ... follow instructions to create your app
 
 cd my-app/
-sbt ";fastOptJS::startWebpackDevServer;~fastOptJS"
+sbt "dev"
 ```
 
 Then open http://localhost:8080 to see your app.
@@ -63,7 +63,7 @@ my-app
 No configuration or complicated folder structures, just the files you need to build your app.
 Once the installation is done, you can run some commands inside the project folder:
 
-### `sbt ";fastOptJS::startWebpackDevServer;~fastOptJS"`
+### `sbt "dev"`
 Runs the app in development mode with hot-reloading enabled.
 Open http://localhost:8080 to see your app
 
