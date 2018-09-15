@@ -36,3 +36,5 @@ webpackDevServerExtraArgs in fastOptJS := Seq("--inline", "--hot")
 webpackBundlingMode in fastOptJS := BundlingMode.LibraryOnly()
 
 requiresDOM in Test := true
+
+addCommandAlias("dev", ";fastOptJS::startWebpackDevServer;~fastOptJS")
