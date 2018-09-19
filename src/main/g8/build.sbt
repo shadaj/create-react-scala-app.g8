@@ -27,9 +27,10 @@ addCompilerPlugin("org.scalameta" % "paradise" % "3.0.0-M11" cross CrossVersion.
 version in webpack := "4.5.0"
 version in startWebpackDevServer:= "3.1.3"
 
+webpackResources := baseDirectory.value / "webpack" * "*"
+
 webpackConfigFile in fastOptJS := Some(baseDirectory.value / "webpack-fastopt.config.js")
 webpackConfigFile in fullOptJS := Some(baseDirectory.value / "webpack-opt.config.js")
-
 webpackConfigFile in Test := Some(baseDirectory.value / "webpack-core.config.js")
 
 webpackDevServerExtraArgs in fastOptJS := Seq("--inline", "--hot")

@@ -2,13 +2,8 @@ var path = require("path");
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var generatedConfig = require("./scalajs.webpack.config.js");
-const entries = {};
-entries[Object.keys(generatedConfig.entry)[0]] = "scalajs";
-
 module.exports = {
   mode: "development",
-  entry: entries,
   resolve: {
     alias: {
       "resources": path.resolve(__dirname, "../../../../src/main/resources"),

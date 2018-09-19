@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV === "production") {
     const opt = require("./$name$-opt.js");
-    scalajsOpt.entrypoint.main();
+    opt.entrypoint.main();
     module.exports = opt;
 } else {
     var exports = window;
