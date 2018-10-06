@@ -8,6 +8,7 @@ entries[Object.keys(generatedConfig.entry)[0]] = "scalajs";
 
 module.exports = merge(core, {
   mode: "production",
+  devtool: "source-map",
   entry: entries,
   plugins: [
     new webpack.DefinePlugin({
