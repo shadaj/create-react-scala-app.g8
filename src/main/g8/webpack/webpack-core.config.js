@@ -39,5 +39,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "../../../../public/index.html")
     })
-  ]
+  ],
+  output: {
+    devtoolModuleFilenameTemplate: (f) => {
+      if (f.resourcePath.startsWith("http://") ||
+          f.resourcePath.startsWith("https://") ||
+          f.resourcePath.startsWith("file://")) {
+        return f.resourcePath;
+      } else {
+        return "webpack://" + f.namespace + "/" + f.resourcePath;
+      }
+    }
+  }
 }
