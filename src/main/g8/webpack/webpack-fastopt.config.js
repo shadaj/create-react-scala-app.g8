@@ -6,9 +6,12 @@ const entries = {};
 entries[Object.keys(generatedConfig.entry)[0]] = "scalajs";
 
 module.exports = merge(core, {
-  devtool: "eval-source-map",
+  devtool: "cheap-module-eval-source-map",
   entry: entries,
   module: {
+    noParse: (content) => {
+      return content.endsWith("-fastopt.js");
+    },
     rules: [
       {
         test: /\-fastopt.js\$/,
