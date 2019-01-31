@@ -17,7 +17,7 @@ object IndexCSS extends js.Object
 object Main {
   val css = IndexCSS
 
-  @JSExportTopLevel("entrypoint.main")
+  @JSExportTopLevel("main")
   def main(): Unit = {
     if (LinkingInfo.developmentMode) {
       hot.initialize()

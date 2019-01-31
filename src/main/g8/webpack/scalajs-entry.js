@@ -1,6 +1,6 @@
 if (process.env.NODE_ENV === "production") {
     const opt = require("./$name$-opt.js");
-    opt.entrypoint.main();
+    opt.main();
     module.exports = opt;
 } else {
     var exports = window;
@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === "production") {
     window.global = window;
 
     const fastOpt = require("./$name$-fastopt.js");
-    fastOpt.entrypoint.main()
+    fastOpt.main()
     module.exports = fastOpt;
 
     if (module.hot) {

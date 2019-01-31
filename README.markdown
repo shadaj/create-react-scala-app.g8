@@ -13,7 +13,7 @@ sbt dev
 ```
 
 Then open http://localhost:8080 to see your app.
-When you're ready to deploy to production, create a minified bundle with `sbt fullOptJS::webpack`
+When you're ready to deploy to production, create a minified bundle with `sbt build`
 
 ### Get Started Immediately
 You **don’t** need to install or configure tools like Webpack.
@@ -72,7 +72,7 @@ The page will automatically reload if you make changes to the code. You will see
 ### `sbt test`
 Runs unit tests for your app inside a Node environment with simulated DOM APIs.
 
-### `sbt fullOptJS::webpack`
+### `sbt build`
 Builds the app for production to the `build` folder. It correctly bundles React in production mode and optimizes the build for the best performance. It also minifies the build using UglifyJS.
 
 Your app is ready to be deployed.
