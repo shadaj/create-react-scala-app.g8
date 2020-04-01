@@ -1,11 +1,11 @@
-# Create React Scala App
-Create [React](https://facebook.github.io/react/) apps in [Scala](https://scala-lang.org/) (via [Slinky](https://github.com/shadaj/slinky)) with no build configuration
+# Create Scala Electron App
+Create [Electron](https://www.electronjs.org/) apps in [Scala](https://scala-lang.org/) (via [Slinky](https://github.com/shadaj/slinky) and [React](https://facebook.github.io/react/)) with no build configuration
 
 ## Quick Overview
 Make sure you have SBT and NPM installed.
 
 ```sh
-sbt new shadaj/create-react-scala-app.g8
+sbt new shadaj/create-react-scala-app.g8 --branch electron
 ... follow instructions to create your app
 
 cd my-app/
@@ -14,6 +14,8 @@ sbt dev
 
 Then open http://localhost:8080 to see your app.
 When you're ready to deploy to production, create a minified bundle with `sbt build`
+
+Once the bundle is ready, `npm install` to install the needed packages and then just `npm run make` to make the Electron app.
 
 ### Get Started Immediately
 You **don’t** need to install or configure tools like Webpack.
@@ -89,6 +91,8 @@ The generated project uses the following tools and libraries:
 + React wrapper, HTML DSL, and hot reloading: [Slinky](https://github.com/shadaj/slinky)
 + [Scala.js Bundler](https://github.com/scalacenter/scalajs-bundler) to bundle your Scala.js app with Webpack
 + [Webpack](https://webpack.js.org/) with [webpack-dev-server](https://github.com/webpack/webpack-dev-server), [file-loader](https://github.com/webpack-contrib/file-loader), [style-loader](https://github.com/webpack-contrib/style-loader), [css-loader](https://github.com/webpack-contrib/css-loader), [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin), and [copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin)
++ [Electron Forge](https://www.electronforge.io/) to take the packaged application and making platform specific distributables
++ [Electron](https://electronjs.org)
 
 ## Why Use This?
 With create-react-scala-app you can quickly bootstrap a new application using Scala and React. Your environment will have everything you need to build a new Scala app:
