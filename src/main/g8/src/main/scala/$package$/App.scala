@@ -20,7 +20,7 @@ object ReactLogo extends js.Object
   
   private val css = AppCSS
 
-  def render() = {
+  val component: FunctionalComponent[Unit] = FunctionalComponent[Unit] { _ =>
     div(className := "App")(
       header(className := "App-header")(
         img(src := ReactLogo.asInstanceOf[String], className := "App-logo", alt := "logo"),
