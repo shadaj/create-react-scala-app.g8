@@ -15,7 +15,7 @@ object AppCSS extends js.Object
 @js.native
 object ReactLogo extends js.Object
 
-@react class App extends StatelessComponent {
+@react object App extends StatelessComponent {
   type Props = Unit
   
   private val css = AppCSS
