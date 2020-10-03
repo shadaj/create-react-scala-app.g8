@@ -35,29 +35,36 @@ To create a new app, run: `sbt new shadaj/create-react-scala-app.g8`, follow the
 This will create a folder `my-app` inside the current folder.
 Inside that directory, it will generate the initial project structure:
 ```
+```
 my-app
 ├── build.sbt
-├── hot-launcher.js
-├── opt-launcher.js
-├── webpack-fastopt.config.js
-├── webpack-opt.config.js
 ├── project
-│   └── build.properties
-│   └── plugins.sbt
+│   ├── build.properties
+│   ├── plugins.sbt
 ├── public
-│   └── favicon.ico
-│   └── index.html
+│   ├── favicon.ico
+│   ├── index.html
 │   └── manifest.json
-└── src
-    └── main
-        └── resources
-            └── App.css
-            └── index.css
-            └── logo.svg
-        └── scala
-            └── hello/world
-                └── App.scala
-                └── Main.scala
+├── src
+│   ├── main
+│   │   ├── resources
+│   │   │   ├── App.css
+│   │   │   ├── index.css
+│   │   │   └── logo.svg
+│   │   └── scala
+│   │       └── hello/world
+│   │           └── App.scala
+│   │           └── Main.scala
+│   └── test
+│       └── scala
+│           └── hello/world
+│               └── AppTest.scala
+└── webpack
+    ├── fastopt-loader.js
+    ├── scalajs-entry.js
+    ├── webpack-core.config.js
+    ├── webpack-fastopt.config.js
+    └── webpack-opt.config.js
 ```
 
 No configuration or complicated folder structures, just the files you need to build your app.
