@@ -35,7 +35,6 @@ To create a new app, run: `sbt new shadaj/create-react-scala-app.g8`, follow the
 This will create a folder `my-app` inside the current folder.
 Inside that directory, it will generate the initial project structure:
 ```
-```
 my-app
 ├── build.sbt
 ├── project
