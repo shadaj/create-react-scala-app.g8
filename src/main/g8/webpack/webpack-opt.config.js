@@ -1,9 +1,9 @@
-var path = require("path");
-var merge = require('webpack-merge');
-var core = require('./webpack-core.config.js')
-var webpack = require("webpack");
+const path = require("path");
+const { merge } = require('webpack-merge');
+const core = require('./webpack-core.config.js');
+const webpack = require("webpack");
 
-var generatedConfig = require("./scalajs.webpack.config.js");
+const generatedConfig = require("./scalajs.webpack.config.js");
 const entries = {};
 entries[Object.keys(generatedConfig.entry)[0]] = "scalajs";
 

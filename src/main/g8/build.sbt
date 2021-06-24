@@ -2,39 +2,39 @@ enablePlugins(ScalaJSBundlerPlugin)
 
 name := "$name$"
 
-scalaVersion := "2.13.2"
+scalaVersion := "2.13.6"
 
-npmDependencies in Compile += "react" -> "16.13.1"
-npmDependencies in Compile += "react-dom" -> "16.13.1"
-npmDependencies in Compile += "react-proxy" -> "1.1.8"
+Compile / npmDependencies += "react" -> "16.13.1"
+Compile / npmDependencies += "react-dom" -> "16.13.1"
+Compile / npmDependencies += "react-proxy" -> "1.1.8"
 
-npmDevDependencies in Compile += "file-loader" -> "6.0.0"
-npmDevDependencies in Compile += "style-loader" -> "1.2.1"
-npmDevDependencies in Compile += "css-loader" -> "3.5.3"
-npmDevDependencies in Compile += "html-webpack-plugin" -> "4.3.0"
-npmDevDependencies in Compile += "copy-webpack-plugin" -> "5.1.1"
-npmDevDependencies in Compile += "webpack-merge" -> "4.2.2"
+Compile / npmDevDependencies += "file-loader" -> "6.2.0"
+Compile / npmDevDependencies += "style-loader" -> "2.0.0"
+Compile / npmDevDependencies += "css-loader" -> "5.2.6"
+Compile / npmDevDependencies += "html-webpack-plugin" -> "4.5.1"
+Compile / npmDevDependencies += "copy-webpack-plugin" -> "6.4.0"
+Compile / npmDevDependencies += "webpack-merge" -> "5.8.0"
 
-libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.6.5"
-libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.6.5"
+libraryDependencies += "me.shadaj" %%% "slinky-web" % "0.6.7"
+libraryDependencies += "me.shadaj" %%% "slinky-hot" % "0.6.7"
 
-libraryDependencies += "org.scalatest" %%% "scalatest" % "3.1.1" % Test
+libraryDependencies += "org.scalatest" %%% "scalatest" % "3.2.9" % Test
 
 scalacOptions += "-Ymacro-annotations"
 
-version in webpack := "4.43.0"
-version in startWebpackDevServer:= "3.11.0"
+webpack / version := "4.44.2"
+startWebpackDevServer / version := "3.11.2"
 
 webpackResources := baseDirectory.value / "webpack" * "*"
 
-webpackConfigFile in fastOptJS := Some(baseDirectory.value / "webpack" / "webpack-fastopt.config.js")
-webpackConfigFile in fullOptJS := Some(baseDirectory.value / "webpack" / "webpack-opt.config.js")
-webpackConfigFile in Test := Some(baseDirectory.value / "webpack" / "webpack-core.config.js")
+fastOptJS / webpackConfigFile := Some(baseDirectory.value / "webpack" / "webpack-fastopt.config.js")
+fullOptJS / webpackConfigFile := Some(baseDirectory.value / "webpack" / "webpack-opt.config.js")
+Test / webpackConfigFile := Some(baseDirectory.value / "webpack" / "webpack-core.config.js")
 
-webpackDevServerExtraArgs in fastOptJS := Seq("--inline", "--hot")
-webpackBundlingMode in fastOptJS := BundlingMode.LibraryOnly()
+fastOptJS / webpackDevServerExtraArgs := Seq("--inline", "--hot")
+fastOptJS / webpackBundlingMode := BundlingMode.LibraryOnly()
 
-requireJsDomEnv in Test := true
+Test / requireJsDomEnv := true
 
 addCommandAlias("dev", ";fastOptJS::startWebpackDevServer;~fastOptJS")
 
